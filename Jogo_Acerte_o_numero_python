@@ -1,0 +1,31 @@
+import random
+import math
+
+nmenor = int(input('Digite aqui o intervalo menor: '))
+nmaior = int(input('Digite aqui o intervalo maior: '))
+
+x = random.randint(nmenor, nmaior)
+print("\n\tVoce tem apenas", round(
+    math.log(nmaior - nmenor + 1, 2)), "chances para acertar")
+
+contador = 0
+
+while contador < math.log(nmaior - nmenor + 1, 2):
+    contador += 1
+
+    escolha = int(input('Escolha um numero: '))
+
+    if x == escolha:
+        print(f'Parabens vc acertou em {contador} tentativas')
+        break
+
+    elif x > escolha:
+        print('Voce tentou um numero baixo')
+
+    elif x < escolha:
+        print('Voce tentou um numero alto')
+
+
+if contador >= math.log(nmaior - nmenor + 1, 2):
+    print('O numero é %d"%x')
+    print('Mais sorte na proxima')
